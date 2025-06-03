@@ -1,0 +1,17 @@
+.headerContainer {
+  display: flex;
+  padding: 10px 0;
+}
+
+.menuItem {
+  flex-grow: 1;
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.menuContainer li a {
+  font-weight: bold;
+}

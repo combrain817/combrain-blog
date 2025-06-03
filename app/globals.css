@@ -1,1 +1,11 @@
 @import "normalize.css";
+
+ul {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
