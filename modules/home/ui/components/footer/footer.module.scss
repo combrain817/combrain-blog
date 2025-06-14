@@ -2,11 +2,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+
   border-top: 1px solid #e0e0e0;
-  margin-top: auto;
+
+  padding: 12px 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
 
   small {
     color: #666;
+  }
+
+  .copyright {
+    display: flex;
+    gap: 4px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 }

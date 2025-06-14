@@ -1,10 +1,17 @@
 import { SocialLinks } from "./social-links";
 import styles from "./footer.module.scss";
+import { Logo } from "./logo";
 
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <small>Copyright©2025 combrain-log. All rights reserved</small>
+      <div className={styles.container}>
+        <Logo />
+        <small className={styles.copyright}>
+          <span>Copyright©2025 combrain-log.</span>
+          <span>All rights reserved</span>
+        </small>
+      </div>
       <SocialLinks />
     </footer>
   );
