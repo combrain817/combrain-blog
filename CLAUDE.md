@@ -2,6 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Project purpose
+The purpose of this project is to create a blog. In order to keep costs to a minimum, we will be serving static files, thereby eliminating the need for external systems like a database.
+
 ## Development Commands
 
 ### Core Development Tasks
@@ -70,5 +73,9 @@ modules/
 1. Use `npm run dev` to start development server
 2. Make changes following the modular component structure
 3. Run `npm run lint` to check code quality
-4. Test changes in the browser at `http://localhost:3000`
+4. Test changes in the browser at `http://localhost:4000`
 5. Build with `npm run build` to verify production readiness
+
+### Important
+Please note: All responses must be in Korean.
+
