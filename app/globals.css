@@ -1,5 +1,11 @@
 @import "normalize.css";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -20,4 +26,11 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
 }
