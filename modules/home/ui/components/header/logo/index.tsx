@@ -12,12 +12,13 @@ export const Logo = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <text
-            x="10"
+            x="60"
             y="25"
             fill="currentColor"
             fontSize="16"
             fontWeight="bold"
             fontFamily="Arial, sans-serif"
+            textAnchor="middle"
           >
             Combrain-Log
           </text>

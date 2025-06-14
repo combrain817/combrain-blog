@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./navigation.module.scss";
 
 export const Navigation = () => {
@@ -5,10 +6,10 @@ export const Navigation = () => {
     <nav className={styles.navigation}>
       <ul>
         <li>
-          <a href="">Home</a>
+          <Link href="/">Home</Link>
         </li>
         <li>
-          <a href="">About</a>
+          <Link href="/about">About</Link>
         </li>
       </ul>
     </nav>
