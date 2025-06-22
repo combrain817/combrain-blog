@@ -19,44 +19,13 @@ async function getArticleContent(slugPath: string[]) {
   const slug = slugPath.join("/");
   const filePath = articlePathMap[slug];
 
-  if (!filePath) {
-    // 매핑에 없으면 기존 방식으로 시도
-    const articlePath =
-      path.join(process.cwd(), "articles", ...slugPath) + ".md";
-
-    try {
-      const fileContent = await fs.readFile(articlePath, "utf8");
-      const { data, content } = matter(fileContent);
-      const htmlContent = marked(content);
-
-      const title =
-        data.title ||
-        content
-          .split("\n")
-          .find((line) => line.startsWith("# "))
-          ?.slice(2) ||
-        "Article";
-
-      return { content: htmlContent, title, slug: data.slug };
-    } catch (error) {
-      console.log("Error reading article:", error);
-      return null;
-    }
-  }
-
   try {
     const fullPath = path.join(process.cwd(), filePath);
     const fileContent = await fs.readFile(fullPath, "utf8");
     const { data, content } = matter(fileContent);
     const htmlContent = marked(content);
 
-    const title =
-      data.title ||
-      content
-        .split("\n")
-        .find((line) => line.startsWith("# "))
-        ?.slice(2) ||
-      "Article";
+    const title = data.title;
 
     return { content: htmlContent, title, slug: data.slug };
   } catch (error) {
