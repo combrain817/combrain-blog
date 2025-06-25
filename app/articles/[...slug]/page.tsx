@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
-import { getArticleBySlug, getMarkdownContent } from "@/lib/mdx";
-import styles from "./article.module.scss";
+import { getArticleBySlug } from "@/lib/mdx";
+
+import { Header } from "@/modules/home/ui/components/header";
+import { Footer } from "@/modules/home/ui/components/footer";
+import { Article } from "@/modules/home/ui/components/article";
 
 interface ArticlePageProps {
   params: Promise<{ slug: string[] }>;
@@ -10,25 +13,17 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
   const slugString = slug.join("/");
 
-  const article = await getArticleBySlug(slugString);
+  const article = getArticleBySlug(slugString);
 
   if (!article) {
     notFound();
   }
 
-  const htmlContent = await getMarkdownContent(article.filePath);
-
   return (
-    <div className={styles["article-container"]}>
-      <header className={styles.header}>
-        <h1>{article.title}</h1>
-        {article.date && <time>{article.date}</time>}
-      </header>
-
-      <article
-        className={styles.content}
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-      />
-    </div>
+    <>
+      <Header />
+      <Article article={article} />
+      <Footer />
+    </>
   );
 }
