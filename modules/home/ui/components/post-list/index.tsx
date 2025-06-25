@@ -1,18 +1,10 @@
 import { PostItem } from "./post-item";
 import styles from "./post-list.module.scss";
+import { getMdxArticles } from "@/lib/mdx";
 
-interface Post {
-  title: string;
-  summary: string;
-  date: string;
-  href: string;
-}
-
-interface PostListProps {
-  posts: Post[];
-}
-
-export const PostList = ({ posts }: PostListProps) => {
+export const PostList = () => {
+  const posts = getMdxArticles();
+  
   return (
     <main className={styles.postList}>
       <ul>
