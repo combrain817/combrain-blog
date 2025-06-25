@@ -1,0 +1,147 @@
+모든 HTML에 있는 속성
+
+- **`accesskey`**
+    - 요소에 접근하기 위한 키보드 단축키를 브라우저에 제안한다. 값은 인쇄 가능한 단일 문자여야 한다. 운영체제 및 브라우저 조합에 따라 `Alt`, `Shift`, `Control`, `Option` 등의 키와 함께 사용된다. 시스템 또는 브라우저 단축키와 충돌할 수 있는 문제가 있다.
+```html
+<a href="#section" accesskey="s">섹션으로 이동</a>
+```
+- **`autocapitalize`**
+    - 사용자가 입력하는 텍스트의 자동 대문자화를 제어한다. `<input>`, `<textarea>` 또는 `contenteditable` 속성이 설정된 요소에 적용된다. `off`, `none`, `on`, `sentences`, `words`, `characters` 등의 값을 가진다.
+```html
+<input type="text" autocapitalize="words">
+```
+- **`autocorrect`**
+    - Safari에서 지원하는 비표준 속성이다. 사용자가 텍스트를 편집할 때 맞춤법 및 구두점 오류의 자동 수정 활성화 여부를 제어한다. `on`, `off` 값을 가진다.
+```html
+<input type="text" autocorrect="off">
+```
+- **`autofocus`**
+    - 페이지 로드 시 또는 `<dialog>`가 표시될 때 해당 요소가 자동으로 포커스를 받아야 함을 나타내는 불리언(Boolean) 속성이다. 문서나 다이얼로그 내에서 하나의 요소에만 지정해야 한다.
+```html
+<input type="text" autofocus>
+```
+- **`contenteditable`**
+    - 요소의 콘텐츠를 사용자가 편집할 수 있는지 여부를 나타내는 열거형 속성이다. `true`, `false`, `plaintext-only` 값을 가진다.
+```html
+<div contenteditable="true">이 텍스트는 수정 가능합니다.</div>
+```
+- **`dir`**
+    - 요소 콘텐츠의 텍스트 방향성을 지정한다. `ltr`(left-to-right), `rtl`(right-to-left), `auto` 값을 가진다. `auto`는 브라우저가 콘텐츠를 분석하여 방향을 결정하도록 한다.
+```html
+<p dir="rtl">טקסט מימין לשמאל</p>
+```
+- **`draggable`**
+    - 요소를 드래그할 수 있는지 나타내는 열거형 속성이다. `true`, `false` 값을 명시적으로 사용해야 한다. 지정하지 않으면 기본값은 `auto`로, 텍스트 선택 영역, 이미지, 링크 등 기본적으로 드래그 가능한 요소만 드래그할 수 있다.
+```html
+<img src="logo.png" draggable="true" alt="로고">
+```
+- **`enterkeyhint`**
+    - 가상 키보드의 'Enter' 키에 표시될 액션 레이블이나 아이콘을 브라우저에 제안한다. 사용자가 입력 필드의 맥락을 이해하는 데 도움을 준다. `enter`, `done`, `go`, `next`, `previous`, `search`, `send` 등의 값을 가진다.
+```html
+<input type="search" enterkeyhint="search">
+```
+- **`hidden`**
+    - 요소가 아직 또는 더 이상 관련이 없음을 나타내어 브라우저가 렌더링하지 않도록 하는 불리언 속성이다. 스크린 리더를 포함한 모든 사용자 에이전트에서 콘텐츠를 숨긴다. CSS의 `display: none;`과 유사하게 동작한다. `hidden="until-found"` 값을 사용하면 페이지 내 검색으로는 해당 요소를 찾고 표시할 수 있다.
+```html
+<div hidden>숨겨진 정보</div>
+```
+- **`inert`**
+    - 요소를 비활성 상태로 만든다. `inert`로 지정된 요소와 그 자손 요소들은 클릭, 포커스 등 어떠한 사용자 입력 이벤트도 받을 수 없으며, 보조 기술의 접근성 트리에서도 제외된다. 모달 다이얼로그의 뒷 배경 처리 등에 유용하다.
+```html
+<fieldset inert>
+  <legend>로그인 정보</legend>
+  <label>ID: <input type="text"></label>
+  <label>PW: <input type="password"></label>
+</fieldset>
+```
+
+- **`inputmode`**
+    - 요소나 그 콘텐츠를 편집할 때 브라우저가 표시해야 할 가상 키보드의 종류를 제안한다. 입력 데이터의 유효성을 검사하지는 않는다. `none`, `text`, `decimal`, `numeric`, `tel`, `search`, `email`, `url` 등의 값을 가진다.
+```html
+<input type="text" inputmode="numeric">
+```
+- **`is`**
+    - 표준 HTML 요소를 사용자 정의 내장 요소(custom built-in element)처럼 동작하도록 지정한다. 웹 컴포넌트(Web Components)와 함께 사용된다. 값으로는 등록된 사용자 정의 요소의 이름을 지정한다.
+```html
+<button is="custom-button">커스텀 버튼</button>
+```
+- **`itemid`, `itemprop`, `itemref`, `itemscope`, `itemtype`**
+    - 이 속성들은 **마이크로데이터(Microdata)** 명세의 일부로, 검색 엔진이나 다른 기계가 콘텐츠의 의미를 더 잘 이해할 수 있도록 구조화된 데이터를 HTML에 추가하는 데 사용된다.
+        - **`itemscope`**: 새로운 아이템(item)의 범위를 정의하는 불리언 속성이다. 이 속성이 지정된 요소는 하나의 아이템을 나타낸다.
+        - **`itemtype`**: `itemscope`로 정의된 아이템의 타입을 지정한다. 값은 어휘(vocabulary, 예: schema.org)를 설명하는 유효한 URL이다.
+        - **`itemprop`**: 아이템에 속성(property)을 추가한다. 값은 해당 속성의 이름이다.
+        - **`itemid`**: 아이템에 대한 전역적 고유 식별자를 지정한다.
+        - **`itemref`**: `itemscope` 요소의 자손이 아닌 요소들을 아이템의 속성으로 연결할 때 사용한다. 값은 해당 요소들의 `id` 목록이다.
+```html
+<div itemscope itemtype="http://schema.org/Person" itemid="urn:uuid:12345">
+  <p>이름: <span itemprop="name">홍길동</span></p>
+  <p>소속: <span itemprop="affiliation">활빈당</span></p>
+  <meta itemprop="description" itemref="person-desc">
+</div>
+
+<p id="person-desc">의적 활동을 하는 인물.</p>
+```
+- **`lang`**
+    - 요소 콘텐츠의 언어를 지정한다. 값은 BCP 47 언어 태그(예: `ko`, `en-US`)이다. 자식 요소에 상속되며, 검색 엔진, 번역 기능, 보조 기술에 중요한 정보를 제공한다.
+```html
+<html lang="ko">
+<body>
+  <p>이 내용은 한국어입니다.</p>
+  <p lang="en">This is English.</p>
+</body>
+</html>
+```
+- **`nonce`**
+    - 콘텐츠 보안 정책(Content Security Policy, CSP)에서 특정 인라인 `<script>`나 `<style>` 요소의 실행을 허용하는 데 사용되는 암호화된 값("number used once")이다. 매 페이지 로드 시마다 서버에서 새롭고 예측 불가능한 값을 생성하여 제공해야 한다.
+```html
+<script nonce="randomvalue123">
+  console.log('이 스크립트는 실행이 허용됩니다.');
+</script>
+```
+- **`popover`**
+    - 요소를 팝오버(popover)로 전환시키는 데 사용된다. 팝오버 요소는 다른 모든 페이지 콘텐츠의 최상위 레이어에 표시되며, 일반적으로 다른 요소를 클릭하거나 페이지 외부를 클릭하여 쉽게 닫을 수 있다. `auto` (기본값) 또는 `manual` 값을 가질 수 있다.
+```html
+<button popovertarget="info-popover">정보 보기</button>
+<div id="info-popover" popover>
+  <h4>추가 정보</h4>
+  <p>이것은 팝오버 콘텐츠입니다.</p>
+</div>
+```
+- **`spellcheck`**
+    - 요소의 텍스트에 대해 맞춤법 및 문법 검사를 수행해야 하는지 여부를 나타낸다. `true`, `false` 값을 가진다.
+```html
+<textarea spellcheck="false"></textarea>
+```
+- **`style`**
+    - 요소에 직접 인라인 CSS 스타일을 적용한다. 유지보수의 어려움 때문에 외부 스타일시트나 `<style>` 요소를 사용하는 것이 일반적으로 권장된다.
+```html
+<p style="color: blue; font-size: 14px;">이 단락은 파란색입니다.</p>
+```
+- **`tabindex`**
+    - 요소의 탭 순서(tabbing order)를 제어한다.
+        - 음수 값(`-1`): 요소를 순차적 포커스 탐색에서 제외하지만, 스크립트로는 포커스를 줄 수 있다.
+        - `0`: 요소를 순차적 포커스 탐색에 포함시키되, 소스 코드 순서에 따라 순서를 정한다.
+        - 양수 값: 포커스 순서를 명시적으로 지정한다. `1`이 가장 먼저, 그 다음 `2` 순이다. 양수 값은 접근성을 해칠 수 있어 사용을 지양해야 한다.
+```html
+<button tabindex="2">두 번째</button>
+<button tabindex="1">첫 번째</button>
+<button tabindex="0">문서 순서</button>
+<button tabindex="-1">탭으로 포커스 불가</button>
+```
+- **`title`**
+    - 요소에 대한 추가 정보를 제공한다. 대부분의 브라우저에서 이 값은 사용자가 요소 위에 마우스를 올렸을 때 툴팁(tooltip)으로 표시된다.
+```html
+<abbr title="World Wide Web">WWW</abbr>
+```
+- **`translate`**
+    - 페이지가 지역화(localization)될 때 요소의 콘텐츠를 번역해야 하는지 여부를 나타낸다. `yes` 또는 `no` 값을 가진다.
+```html
+<p>웹 페이지는 <span translate="no">HTML</span>로 작성됩니다.</p>
+```
+- **`writingsuggestions`**
+    - (실험적 기능) 사용자가 텍스트를 입력할 때 브라우저가 글쓰기 제안(예: 자동 완성, 텍스트 예측)을 표시해야 하는지 여부를 제어한다. `true` 또는 `false` 값을 가질 수 있다.
+```html
+<input type="text" writingsuggestions="false">
+```
+# 출처
+[HTML Standard](https://html.spec.whatwg.org/multipage/dom.html#global-attributes)
