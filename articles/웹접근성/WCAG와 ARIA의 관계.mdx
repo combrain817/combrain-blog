@@ -1,0 +1,26 @@
+==WCAG는 지침==
+==ARIA는 구현 방법(WCAG를 준수하기 위한)==
+
+## WCAG(Web Content Accessibility Guidelines)란
+- **정의:** W3C에서 제정한 웹 콘텐츠 접근성 지침. 웹사이트와 애플리케이션을 장애인을 포함한 모든 사용자가 동등하게 이용할 수 있도록 제작하는 방법을 정의한 **국제 표준**이다.
+- **역할:** **'무엇을'** 해야 하는지에 대한 목표를 제시한다. 즉, 웹 콘텐츠가 접근성을 갖추기 위해 충족해야 할 **요구사항(Success Criteria)들의 집합**이다.
+- **핵심:** 인지성(Perceivable), 운용성(Operable), 이해성(Understandable), 견고성(Robust)의 4가지 원칙을 기반으로 구성되며, A, AA, AAA의 3가지 준수 수준을 제시한다.
+- **비유:** 휠체어 접근을 위한 경사로의 각도, 점자블록의 위치 등 지켜야 할 규정을 명시한다.
+
+## ARIA(Accessible Rich Internet Applications)란
+
+- **정의:** WAI-ARIA라고도 불리며, 동적인 콘텐츠나 커스텀 UI 컴포넌트(예: 탭, 아코디언, 모달창 등)의 접근성을 향상시키기 위한 **W3C의 기술 명세(Technical Specification)** 이다.
+- **역할:** **'어떻게'** 접근성을 구현할 수 있는지에 대한 방법을 제공한다. 특히 시맨틱(semantic) 정보가 부족한 HTML 요소에 `role`(역할), `property`(속성), `state`(상태) 정보를 추가하여 보조기기(예: 스크린 리더)가 콘텐츠를 더 잘 이해할 수 있도록 돕는다.
+- **핵심:** HTML 속성 형태로 사용된다. (예: `role="button"`, `aria-label="닫기"`, `aria-expanded="true"`)
+- **비유:** 기준에 맞는 경사로를 만들기 위한 미끄럼 방지 자재, 자동문의 센서 기술 등이 여기에 속한다.
+
+---
+
+|구분|WCAG (Web Content Accessibility Guidelines)|ARIA (Accessible Rich Internet Applications)|
+|---|---|---|
+|**목적/역할**|접근성 목표를 정의하는 **지침, 표준**|접근성 구현을 돕는 **기술, 명세**|
+|**추상화 수준**|**무엇을(What):** 달성해야 할 목표 제시|**어떻게(How):** 목표 달성을 위한 구체적 방법 제공|
+|**핵심 내용**|4대 원칙, 성공 기준, 준수 수준 (A/AA/AAA)|역할(roles), 속성(properties), 상태(states)|
+|**관계**|**상위 개념.** ARIA는 WCAG를 만족시키기 위한 방법론 중 하나.|**하위 개념.** WCAG 지침을 기술적으로 구현하는 도구.|
+
+**주의사항:** ARIA의 제1 원칙은 'ARIA를 사용하지 않는 것(No ARIA is better than Bad ARIA)'이다. 네이티브 HTML의 시맨틱 태그(예: `<button>`, `<nav>`, `<details>`)로 구현할 수 있다면 그것을 우선적으로 사용해야 하며, ARIA는 보조적인 수단으로만 신중하게 사용해야 한다.
