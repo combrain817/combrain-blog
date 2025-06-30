@@ -20,3 +20,193 @@
     font-size: 0.9rem;
   }
 }
+
+.article-container {
+  strong {
+    font-weight: 700;
+    color: #2c3e50;
+  }
+
+  code {
+    background-color: #f1f3f4;
+    color: #d73a49;
+    padding: 0.25rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.85em;
+    border: 1px solid #e1e4e8;
+  }
+
+  pre {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    
+    code {
+      background-color: transparent;
+      color: #24292f;
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      font-size: 0.875rem;
+      line-height: 1.45;
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid #0969da;
+    margin: 1.5rem 0;
+    padding: 0.5rem 0 0.5rem 1rem;
+    background-color: #f6f8fa;
+    border-radius: 0 6px 6px 0;
+    
+    p {
+      margin: 0;
+      color: #656d76;
+      font-style: italic;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1 { font-size: 2rem; color: #24292f; }
+  h2 { font-size: 1.5rem; color: #24292f; }
+  h3 { font-size: 1.25rem; color: #24292f; }
+  h4 { font-size: 1rem; color: #24292f; }
+
+  p {
+    margin: 1rem 0;
+    color: #24292f;
+    line-height: 1.6;
+  }
+
+  ul {
+    margin: 1rem 0;
+    padding-left: 0;
+    list-style: none;
+    
+    li {
+      position: relative;
+      margin: 0.75rem 0;
+      padding-left: 1.5rem;
+      color: #24292f;
+      line-height: 1.6;
+      
+      &:before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #0969da;
+        font-weight: bold;
+        font-size: 1.2em;
+        line-height: 1.3;
+      }
+      
+      &:hover {
+        &:before {
+          color: #0550ae;
+          transform: scale(1.2);
+          transition: all 0.2s ease;
+        }
+      }
+    }
+  }
+
+  ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    
+    li {
+      margin: 0.75rem 0;
+      color: #24292f;
+      line-height: 1.6;
+      padding-left: 0.5rem;
+      
+      &::marker {
+        color: #0969da;
+        font-weight: 600;
+      }
+    }
+  }
+
+  a {
+    color: #0969da;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin: 1.5rem 0;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #d0d7de;
+      vertical-align: top;
+    }
+    
+    th {
+      background-color: #f6f8fa;
+      font-weight: 600;
+      color: #24292f;
+      border-bottom: 2px solid #d0d7de;
+      
+      &:not(:last-child) {
+        border-right: 1px solid #d0d7de;
+      }
+    }
+    
+    td {
+      color: #24292f;
+      
+      &:not(:last-child) {
+        border-right: 1px solid #d0d7de;
+      }
+    }
+    
+    tr {
+      &:nth-child(even) {
+        background-color: #f6f8fa;
+      }
+      
+      &:hover {
+        background-color: #f1f3f4;
+      }
+      
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+    
+    thead tr {
+      &:hover {
+        background-color: #f6f8fa;
+      }
+    }
+  }
+}
